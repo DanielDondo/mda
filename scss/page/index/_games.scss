@@ -27,7 +27,9 @@
    }
    // .games__content
    &__content {
-      text-align: center;
+      @media (max-width: $tablet) {
+         text-align: center;
+      }
    }
    // .games__items
    &__items {

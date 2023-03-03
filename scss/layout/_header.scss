@@ -1,6 +1,7 @@
 .header {
+   background-color: $background-color;
    border-bottom: rem(1) solid #cacad6;
-   z-index: 5;
+   z-index: 2;
    // .header__container
    &__container {
    }
@@ -16,6 +17,7 @@
    }
    // .header__logo
    &__logo {
+      z-index: 5;
       img {
          max-width: 100%;
          height: auto;
@@ -23,6 +25,8 @@
    }
    // .header__basket
    &__basket {
+      cursor: pointer;
+      z-index: 5;
       svg {
          width: rem(24);
          height: rem(24);
@@ -75,8 +79,11 @@
    &__link {
       position: relative;
       font-weight: 400;
-      line-height: math.div(16, 22);
+      font-size: rem(20);
+      line-height: math.div(20, 22);
       padding: rem(5) 0;
+      color: #000;
+      z-index: 5;
       @media (max-width: $mobile) {
          font-size: rem(32);
          color: #fff;

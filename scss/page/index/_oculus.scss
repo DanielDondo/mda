@@ -1,0 +1,40 @@
+.oculus {
+   position: relative;
+   @include adaptiveValue("padding-top", 50, 25);
+   @include adaptiveValue("padding-bottom", 50, 25);
+   // .oculus__container
+   &__container {
+      display: flex;
+      // justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
+   // .oculus__text
+   &__text {
+      position: absolute;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 400, 200);
+      line-height: math.div(400, 400);
+      @extend %colorText;
+
+      opacity: 0.1;
+      z-index: -1;
+      animation: line-text 7.5s linear 1s infinite;
+   }
+   // .oculus__image
+   &__image {
+      @include adaptiveValue("min-height", 334, 280);
+      max-width: rem(346);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 30, 20);
+      }
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .oculus__box-buttons
+   &__box-buttons {
+   }
+}

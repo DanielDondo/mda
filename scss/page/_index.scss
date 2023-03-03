@@ -34,7 +34,6 @@
    &__contacts {
    }
 }
-
 //========================================================================================
 @keyframes gradient {
    0% {
@@ -64,6 +63,26 @@
    100% {
       opacity: 0;
       transform: rotate(-45deg) translateY(20px, 20px);
+   }
+}
+@keyframes line-text {
+   from {
+      transform: translate(100%);
+      transform-origin: left center;
+   }
+   to {
+      transform: translate(-100%);
+      transform-origin: right center;
+   }
+}
+@keyframes pulsar {
+   0% {
+      transform: scale(1);
+      opacity: 40%;
+   }
+   100% {
+      transform: scale(2);
+      opacity: 0;
    }
 }
 //========================================================================================
