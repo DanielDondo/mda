@@ -381,11 +381,11 @@ h6 {
     padding-top: 3.25rem;
   }
 }
-.games__article:hover {
+.games__article:hover, .games__article:focus {
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
 }
-.games__article:hover .article-games__title::after {
+.games__article:hover .article-games__title::after, .games__article:focus .article-games__title::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
