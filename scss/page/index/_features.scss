@@ -1,0 +1,27 @@
+.features {
+   @include adaptiveValue("padding-top", 100, 25);
+   @include adaptiveValue("padding-bottom", 50, 25);
+
+   // .features__container
+   &__container {
+   }
+
+   // .features__inner
+   &__inner {
+      display: flex;
+      gap: rem(10);
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+   }
+
+   // .features__title
+   &__title {
+      flex-basis: rem(290);
+   }
+
+   // .features__text
+   &__text {
+      max-width: rem(330);
+   }
+}

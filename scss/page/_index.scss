@@ -1,0 +1,83 @@
+@import "./index/accessories";
+@import "./index/complete";
+@import "./index/contacts";
+@import "./index/features";
+@import "./index/games";
+@import "./index/hero";
+@import "./index/oculus";
+@import "./index/promo";
+
+//========================================================================================
+.page {
+   // .page__hero
+   &__hero {
+   }
+   // .page__features
+   &__features {
+   }
+   // .page__games
+   &__games {
+   }
+   // .page__oculus
+   &__oculus {
+   }
+   // .page__complete
+   &__complete {
+   }
+   // .page__promo
+   &__promo {
+   }
+   // .page__accessories
+   &__accessories {
+   }
+   // .page__contacts
+   &__contacts {
+   }
+}
+
+//========================================================================================
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+   25% {
+      background-position: 25% 75%;
+   }
+   50% {
+      background-position: 50% 100%;
+   }
+   75% {
+      background-position: 25% 75%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
+}
+@keyframes scroll {
+   0% {
+      opacity: 0;
+      transform: rotate(-45deg) translateY(-20px, -20px);
+   }
+   50% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+      transform: rotate(-45deg) translateY(20px, 20px);
+   }
+}
+//========================================================================================
+.title-main {
+   font-weight: 400;
+   text-transform: uppercase;
+   @include adaptiveValue("font-size", 20, 16);
+   line-height: math.div(20, 18);
+}
+.text-color {
+   font-weight: 400;
+   @include adaptiveValue("font-size", 36, 24);
+   line-height: math.div(36, 41);
+   text-transform: uppercase;
+   @extend %colorText;
+}
+//========================================================================================

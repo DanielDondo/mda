@@ -1,0 +1,81 @@
+.buttons-box {
+   display: flex;
+   align-items: center;
+   gap: rem(5);
+
+   @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: rem(10);
+   }
+   // .buttons-box__button-text
+   &__button-text {
+      font-weight: 700;
+      line-height: math.div(16, 18);
+      padding: rem(21) rem(111);
+      @media (max-width: $mobileSmall) {
+         width: 100%;
+      }
+      color: #fff;
+      background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+      background-size: 200% 200%;
+      animation: gradient 5s ease infinite;
+      transition: all 0.4s ease 0s;
+      text-transform: uppercase;
+      @media (any-hover: hover) {
+         &:hover {
+            transform: scale(0.99);
+         }
+         &:hover ~ button {
+            background-color: #fff;
+         }
+      }
+   }
+   // .buttons-box__button-price
+   &__button-price {
+      font-weight: 700;
+      line-height: math.div(16, 18);
+      padding: rem(20) rem(105);
+      @media (max-width: $mobileSmall) {
+         width: 100%;
+      }
+      border: 1px solid;
+      border-image: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
+      background-size: 200% 200%;
+      animation: gradient 5s ease infinite;
+      transition: all 0.4s ease 0s;
+      text-transform: uppercase;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #fff;
+            transform: scale(0.99);
+         }
+      }
+   }
+}
+//===============================================================================================================
+//===============================================================================================================
+//===============================================================================================================
+.scroll {
+   position: fixed;
+   top: 90%;
+   right: 3%;
+   span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-top: 5px solid #337ab7;
+      border-right: 5px solid #337ab7;
+      border-image: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
+      background-size: 200% 200%;
+      transform: rotate(-45deg);
+      margin: -16px;
+      animation: scroll 3s infinite, gradient 5s ease infinite;
+      &:nth-child(2) {
+         animation-delay: -0.2s;
+      }
+      &:nth-child(3) {
+         animation-delay: -0.4s;
+      }
+   }
+}
