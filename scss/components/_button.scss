@@ -7,6 +7,14 @@
       flex-direction: column;
       gap: rem(10);
    }
+
+   @media (any-hover: hover) {
+      &:has(.buttons-box__button-price:hover) .buttons-box__button-text {
+         color: #ffae00 !important;
+         transform: scale(1.05) !important;
+      }
+   }
+
    // .buttons-box__button-text
    &__button-text {
       font-weight: 700;
@@ -27,6 +35,8 @@
          }
          &:hover ~ button {
             background-color: #fff;
+            color: #bb8002;
+            transform: scale(1.05);
          }
       }
    }
@@ -58,8 +68,9 @@
 //===============================================================================================================
 .scroll {
    position: fixed;
+   visibility: hidden;
    top: 90%;
-   right: 3%;
+   right: 10%;
    span {
       display: block;
       width: 30px;
@@ -77,5 +88,8 @@
       &:nth-child(3) {
          animation-delay: -0.4s;
       }
+   }
+   &.active {
+      visibility: visible;
    }
 }

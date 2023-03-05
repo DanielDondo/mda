@@ -3,47 +3,21 @@ function initBurger(
    burgerMenu,
    closingOut,
    escapeClose,
-   activeClass,
-   classTarget
+   activeClass
 ) {
    const BUTTON = document.querySelector(`.${burgerButton}`);
    const MENU = document.querySelector(`.${burgerMenu}`);
    const CLASS = activeClass ? activeClass : `burger-opened`;
-   const TARGET = ((status) => {
-      switch (status) {
-         case "menu":
-            return MENU;
-         case "button":
-            return BUTTON;
-         case "both":
-            return [MENU, BUTTON];
-         case "all":
-            return [MENU, BUTTON, document.documentElement];
-         default:
-            return document.documentElement;
-      }
-   })(classTarget);
-
-   console.log(TARGET);
-
    document.addEventListener("click", burgerClicks);
    if (escapeClose) {
       document.addEventListener("keydown", burgerKey);
    }
 
    function burgerOpen() {
-      if (Array.isArray(TARGET)) {
-         TARGET.forEach((x) => x.classList.add(CLASS));
-      } else {
-         TARGET.classList.add(CLASS);
-      }
+      document.documentElement.classList.add(CLASS);
    }
    function burgerClose() {
-      if (Array.isArray(TARGET)) {
-         TARGET.forEach((x) => x.classList.remove(CLASS));
-      } else {
-         TARGET.classList.remove(CLASS);
-      }
+      document.documentElement.classList.remove(CLASS);
    }
 
    function takeBurgerState() {
@@ -75,7 +49,7 @@ function initBurger(
       }
    }
 }
-initBurger(`burger-button`, `burger`, true, true, `active-burger`, `burger-button`);
+initBurger(`burger-button`, `burger`, true, true, `active`);
 //===============================================================================================================
 function initScroll(
    scrollButton,
@@ -89,22 +63,41 @@ function initScroll(
       ? document.querySelector(`[data-${scrollButton}]`)
       : document.querySelector(`.${scrollButton}`);
    BUTTON.onclick = () => {
-      BUTTON.classList.remove(CLASS);
       window.scrollTo({
          top: 0,
          left: 0,
          behavior: isSmooth ? "smooth" : "auto",
       });
+      BUTTON.classList.remove('active');
    };
    window.onscroll = () => {
-      if (document.pageYOffset >= pxToShow) {
-         BUTTON.classList.add('CLASS');
+      if (window.pageYOffset > pxToShow) {
+         BUTTON.classList.add('active');
       } else {
-         BUTTON.classList.remove('CLASS');
+         BUTTON.classList.remove('active');
       }
    };
 }
 initScroll("scroll", 0, false, false, true);
+//===============================================================================================================
+function initTabs(tabsData, activeClass) {
+   const TAB_ITEMS = document.querySelectorAll(tabsData);
+   const CLASS = activeClass ? activeClass : "tab-active";
+   TAB_ITEMS.forEach(
+      (x) =>
+      (x.onclick = () => {
+         const TAB = document.querySelector(
+            `[data-tabsContent="${x.dataset.tabsbutton}"]`
+         );
+         document.querySelectorAll(`.${CLASS}`).forEach((d) => {
+            d.classList.remove(CLASS);
+         });
+         TAB.classList.add(CLASS);
+         x.classList.add(CLASS);
+      })
+   );
+}
+initTabs("[data-tabsButton]", "tab-active");
 //===============================================================================================================
 class DynamicAdapt {
    constructor(type) {
@@ -237,3 +230,55 @@ class DynamicAdapt {
 const da = new DynamicAdapt("max");
 da.init();
 //===============================================================================================================
+function initNav(dataNav, dataSections, isSmooth, header) {
+   const BUTTONS = document.querySelectorAll(`[data-${dataNav}]`);
+   dataNav = dataNav.toLocaleLowerCase();
+   const HEADER = header ? document.querySelector(`.${header}`) : false;
+   BUTTONS.forEach(x => x.onclick = () => {
+      window.scrollTo({
+         top: (() => {
+            const ELEMENT = document.querySelector(`[data-${dataSections}="${x.dataset[dataNav]}"]`);
+            console.log(ELEMENT.getBoundingClientRect().top);
+            if (HEADER) return ELEMENT.getBoundingClientRect().top - HEADER.offsetHeight;
+            else return ELEMENT.getBoundingClientRect().top;
+         })(),
+         left: 0,
+         behavior: isSmooth ? "smooth" : "auto",
+      });
+      document.querySelectorAll(".active").forEach(x => x.classList.remove("active"));
+   })
+}
+initNav("go", "to", true, "header")
+//===============================================================================================================
+// function videControl(video, button, activeClass, resetOnStop) {
+//    const VIDEO = document.querySelector(`.${video}`);
+//    const BUTTON = document.querySelector(`.${button}`);
+//    const CLASS = activeClass;
+//    let status = false;
+//    BUTTON.onclick = () => {
+//       if (!status) {
+//          VIDEO.play();
+//       } else {
+//          VIDEO.pause();
+//          if (resetOnStop) VIDEO.currentTime = 0;
+//       }
+
+//       if (CLASS) VIDEO.classList.toggle(CLASS);
+//       status = !status;
+//    }
+// }
+// videControl("video-tabs__video", "video-tabs__button", "active", false)
+//===============================================================================================================
+
+function videoControl(button, video, activeClass) {
+   const BUTTON = document.querySelector(`.${button}`);
+   const VIDEO = document.querySelector(`.${video}`);
+   BUTTON.onclick = () => {
+      BUTTON.style.display = "none";
+      VIDEO.play();
+      VIDEO.classList.add(activeClass);
+      VIDEO.setAttribute("controls", "");
+   }
+}
+
+videoControl("video-tabs__button", "video-tabs__video", "active")

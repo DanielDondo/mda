@@ -91,6 +91,7 @@
    &__price {
       font-weight: 700;
       line-height: math.div(16, 9);
+      text-transform: uppercase;
       margin-top: auto;
       color: #070707;
       &:not(:last-child) {

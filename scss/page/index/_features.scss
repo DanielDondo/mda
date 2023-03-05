@@ -9,15 +9,22 @@
    // .features__inner
    &__inner {
       display: flex;
-      gap: rem(10);
+      gap: rem(20);
       &:not(:last-child) {
          margin-bottom: rem(20);
+      }
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
       }
    }
 
    // .features__title
    &__title {
-      flex-basis: rem(290);
+      @media (min-width: $mobile) {
+         flex-basis: rem(300);
+      }
    }
 
    // .features__text

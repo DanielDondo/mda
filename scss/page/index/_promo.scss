@@ -11,6 +11,7 @@
          screen and (min-resolution: 2dppx) {
          background-image: url("../img/section__promo/promo@2x.png");
       }
+      background-attachment: scroll;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -87,6 +88,7 @@
             opacity: 0;
             filter: blur(60px);
          }
+         color: #ffae00;
       }
    }
 }

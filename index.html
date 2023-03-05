@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/style.min.css">
    <link rel="shortcut icon" href="./favicon.ico">
-   <title>Document</title>
+   <title>Home Oculus</title>
 </head>
 
 <body>
@@ -21,34 +21,92 @@
                <nav class="burger__navigation">
                   <ul class="burger__list">
                      <li class="burger__item">
-                        <a href="#" class="burger__link">SHOP</a>
+                        <a data-go="accessories" href="#" class="burger__link">SHOP</a>
                      </li>
                      <li class="menu__item">
-                        <a href="#" class="burger__link">GAMES</a>
+                        <a data-go="games" href="#" class="burger__link">GAMES</a>
                      </li>
                      <li class="menu__item">
-                        <a href="#complete" class="burger__link">METAVERSE</a>
+                        <a href="" class="burger__link">METAVERSE</a>
                      </li>
                   </ul>
                </nav>
                <a href="" class="header__logo"><img src="./img/logo.svg" alt=""></a>
-               <div class="header__basket">
+               <div class="header__basket basket">
                   <svg>
                      <use xlink:href="./img/icons/sprite.svg#icon-basket"></use>
                   </svg>
+                  <span class="basket__quantily"></span>
+                  <div class="basket__content content-basket">
+                     <ul class="content-basket__list">
+                        <li class="content-basket__item">
+                           <article class="content-basket__card card-product">
+                              <div class="card-product__picture">
+                                 <img src="./img/section__accessories/accessories-2.jpg"
+                                    srcset="./img/section__accessories/accessories-2@2x.jpg" alt="picture">
+                              </div>
+                              <div class="card-product__text">
+                                 <h3 class="card-product__title">Meta Quest Gift Cards</h3>
+                                 <span class="card-product__price">$15-50 USD</span>
+                              </div>
+                              <button type="button" class="card-product__button">
+                                 <svg>
+                                    <use xlink:href="./img/icons/sprite.svg#icon-remove"></use>
+                                 </svg>
+                              </button>
+                           </article>
+                        </li>
+                        <li class="content-basket__item">
+                           <article class="content-basket__card card-product">
+                              <div class="card-product__picture">
+                                 <img src="./img/section__accessories/accessories-3.jpg"
+                                    srcset="./img/section__accessories/accessories-3@2x.jpg" alt="picture">
+                              </div>
+                              <div class="card-product__text">
+                                 <h3 class="card-product__title">Meta Quest 2 Active Pack</h3>
+                                 <span class="card-product__price">$69.99 USD</span>
+                              </div>
+                              <button type="button" class="card-product__button">
+                                 <svg>
+                                    <use xlink:href="./img/icons/sprite.svg#icon-remove"></use>
+                                 </svg>
+                              </button>
+                           </article>
+                        </li>
+                        <li class="content-basket__item">
+                           <article class="content-basket__card card-product">
+                              <div class="card-product__picture">
+                                 <img src="./img/section__accessories/accessories-4.jpg"
+                                    srcset="./img/section__accessories/accessories-4@2x.jpg" alt="picture">
+                              </div>
+                              <div class="card-product__text">
+                                 <h3 class="card-product__title">Link Cable</h3>
+                                 <span class="card-product__price">$79.99 USD</span>
+                              </div>
+                              <button type="button" class="card-product__button">
+                                 <svg>
+                                    <use xlink:href="./img/icons/sprite.svg#icon-remove"></use>
+                                 </svg>
+                              </button>
+                           </article>
+                        </li>
+                     </ul>
+                     <div class="content-basket__bottom bottom-content">
+                        <div class="bottom-content__full-price">
+                           <span class="bottom-content__text"></span>
+                           <span class="bottom-content__price-text"></span>
+                        </div>
+                        <button type="button" class="bottom-content__button">
+                           pay for the goods
+                        </button>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
       </header>
       <main class="page">
          <section class="page__hero hero">
-            <div class="hero__inner">
-               <div class="hero__bg -ibg">
-                  <picture>
-                     <img src="./img/section__hero/hero.png" srcset="./img/section__hero/hero@2x.png" alt="hero img">
-                  </picture>
-               </div>
-            </div>
             <div class="hero__container">
                <h1 class="hero__title">Meta Quest 2</h1>
                <p class="hero__subtitle">Get an Elite Strap free</p>
@@ -60,15 +118,238 @@
                <p class="hero__text">Meta Quest 2 is for ages 13+</p>
             </div>
          </section>
-         <!-- <section class="page__features features">
+         <section class="page__features features">
             <div class="features__container">
                <div class="features__inner">
                   <h2 class="features__title title-main">PRODUCT FEATURES</h2>
                   <p class="features__text text-color">Easy to set up and safe to use</p>
                </div>
+               <div class="name__tabs tabs">
+                  <div class="tabs__items items-tabs">
+                     <button data-tabsButton="1" type="button" class="items-tabs__button tab-active">
+                        <span>Graphics</span></button>
+                     <button data-tabsButton="2" type="button" class="items-tabs__button">
+                        <span>Controls</span></button>
+                     <button data-tabsButton="3" type="button" class="items-tabs__button">
+                        <span>Processor</span></button>
+                     <button data-tabsButton="4" type="button" class="items-tabs__button">
+                        <span>Set up your play area</span>
+                     </button>
+                     <button data-tabsButton="5" type="button" class="items-tabs__button">
+                        <span>Gardian activity</span>
+                     </button>
+                     <button data-tabsButton="6" type="button" class="items-tabs__button">
+                        <span>Headset casting</span>
+                     </button>
+                  </div>
+                  <div class="tabs__content content-tabs">
+                     <div data-tabsContent="1" id="content-1" class="content-tabs__item tab-active">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-1.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Graphics
+                              </h3>
+                              <p class="article-tabs__text">
+                                 With 1832 x 1920 pixels per eye, everything from multiplayer
+                                 games and productivity apps to 3600 videos look beyond
+                                 incredible
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                     <div data-tabsContent="2" id="content-2" class="content-tabs__item">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-2.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Controls
+                              </h3>
+                              <p class="article-tabs__text">
+                                 Natural gestures and finger movement create a sense of true hand presence for more
+                                 realistic, memorable, and tactile VR.
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                     <div data-tabsContent="3" id="content-3" class="content-tabs__item">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-1.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Processor
+                              </h3>
+                              <p class="article-tabs__text">
+                                 Raptor Lake is Intel's successor to Alder Lake, an enhanced Intel 7-process based
+                                 microarchitecture for mainstream
+                                 workstations
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                     <div data-tabsContent="4" id="content-4" class="content-tabs__item">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-4.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Processor
+                              </h3>
+                              <p class="article-tabs__text">
+                                 Raptor Lake is Intel's successor to Alder Lake, an enhanced Intel 7-process based
+                                 microarchitecture for mainstream
+                                 workstations
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                     <div data-tabsContent="5" id="content-5" class="content-tabs__item">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-5.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Set up your play area
+                              </h3>
+                              <p class="article-tabs__text">
+                                 Choose to set up a room-scale play area to enjoy moving around and fully engage with
+                                 the
+                                 VR experience.
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                     <div data-tabsContent="6" id="content-6" class="content-tabs__item">
+                        <div class="content-tabs__section section-tabs">
+                           <div class="section-tabs__picture">
+                              <img src="./img/section__features/content-6.jpg" alt="picture tabs">
+                           </div>
+                           <article class="section-tabs__article article-tabs">
+                              <h3 class="article-tabs__title">
+                                 Guardian activity
+                              </h3>
+                              <p class="article-tabs__text">
+                                 The most important piece of a virtual reality kit is the headset, a device like a thick
+                                 pair of goggles that goes over your eyes.
+                              </p>
+                              <div class="article-tabs__video video-tabs">
+                                 <div class="video-tabs__box-video">
+                                    <video preload="auto" poster="./img/section__features/features-video.jpg"
+                                       class="video-tabs__video" src="./video/video.mp4">
+                                    </video>
+                                    <div class="video-tabs__inner">
+                                       <button class="video-tabs__button">
+                                          <svg class="video-tabs__icon">
+                                             <use xlink:href="./img/icons/sprite.svg#icon-player"></use>
+                                          </svg>
+                                       </button>
+                                       <p class="video-tabs__text">
+                                          Watch the video
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-         </section> -->
-         <section class="page__games games">
+         </section>
+         <section data-to="games" class="page__games games">
             <div class="games__container">
                <h2 class="games__title title-main">GAMES</h2>
                <div class="games__inner">
@@ -83,10 +364,16 @@
                   </div>
                   <div class="games__items">
                      <article class="games__article article-games">
+                        <a href="#" class="article-games__picture">
+                           <img class="article-games__img" src="./img/section__games/games-1.jpg"
+                              srcset="./img/section__games/games-1@2x.jpg" alt="picture games">
+                        </a>
                         <div class="article-games__content">
-                           <h3 class="article-games__title">
-                              Blade & Sorcery: Nomad
-                           </h3>
+                           <a href="#" class="article-games__link">
+                              <h3 class="article-games__title">
+                                 Blade & Sorcery: Nomad
+                              </h3>
+                           </a>
                            <p class="article-games__text">
                               Step into a medieval fantasy sandbox that uses phisics to serve up some of the
                               most realistic combat in VR
@@ -97,10 +384,16 @@
                         </div>
                      </article>
                      <article class="games__article article-games">
+                        <a href="#" class="article-games__picture">
+                           <img class="article-games__img" src="./img/section__games/games-2.jpg"
+                              srcset="./img/section__games/games-2@2x.jpg" alt="picture games">
+                        </a>
                         <div class="article-games__content">
-                           <h3 class="article-games__title">
-                              Population: One
-                           </h3>
+                           <a href="#" class="article-games__link">
+                              <h3 class="article-games__title">
+                                 Population: One
+                              </h3>
+                           </a>
                            <p class="article-games__text">
                               Climb anything. Fight everywhere. Experience battle royale only possible in VR
                            </p>
@@ -110,10 +403,16 @@
                         </div>
                      </article>
                      <article class="games__article article-games">
+                        <a href="#" class="article-games__picture">
+                           <img class="article-games__img" src="./img/section__games/games-3.jpg"
+                              srcset="./img/section__games/games-3@2x.jpg" alt="picture games">
+                        </a>
                         <div class="article-games__content">
-                           <h3 class="article-games__title">
-                              Supernatural
-                           </h3>
+                           <a href="#" class="article-games__link">
+                              <h3 class="article-games__title">
+                                 Supernatural
+                              </h3>
+                           </a>
                            <p class="article-games__text">
                               Box, Flow, Meditate and Stretch with real coaches in stunning destinations from around the
                               world. Enjoy new workouts every day.
@@ -140,7 +439,7 @@
                </div>
             </div>
          </div>
-         <section id="complete" class="page__complete complete">
+         <section class="page__complete complete">
             <div class="complete__container">
                <h2 class="complete__title title-main">IN THE BOX</h2>
                <div class="complete__items">
@@ -187,7 +486,7 @@
                <a href="#" class="promo__link-button"><span>GO</span></a>
             </div>
          </div>
-         <section class="page__accessories accessories">
+         <section data-to="accessories" class="page__accessories accessories">
             <div class="accessories__container">
                <h2 class="accessories__title title-mmin">ACCESSORIES</h2>
                <p class="accessories__text text-color">Personalize every experience</p>

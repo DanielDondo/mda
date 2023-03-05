@@ -1,0 +1,117 @@
+.header {
+   // .header__basket
+   &__basket.active {
+      &:hover {
+         cursor: pointer;
+         color: #bc10d8;
+         z-index: 5;
+      }
+   }
+}
+//===============================================================================================================
+.basket {
+   position: relative;
+   // .basket__quantily
+   &__quantily {
+      position: absolute;
+      width: rem(14);
+      height: rem(14);
+      font-size: rem(11);
+      border-radius: 50%;
+      line-height: 0;
+      bottom: 0;
+      right: rem(-5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+   }
+   // .basket__content
+   &__content {
+      display: none;
+
+      position: absolute;
+      cursor: default;
+      @include adaptiveValue("top", 20, 8);
+      right: 0;
+      transform: translate(0%, 10%);
+      min-height: 400px;
+      width: 490px;
+      background-color: yellow;
+   }
+}
+//===============================================================================================================
+.content-basket {
+   // .content-basket__list
+   &__list {
+      max-height: 330px;
+   }
+   // .content-basket__item
+   &__item {
+   }
+   // .content-basket__card
+   &__card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      gap: 30px;
+   }
+   // .content-basket__bottom
+   &__bottom {
+   }
+}
+//===============================================================================================================
+.card-product {
+   // .card-product__picture
+   &__picture {
+      width: 100px;
+      height: 100px;
+      img {
+         max-width: 100%;
+         height: auto;
+         object-fit: cover;
+      }
+   }
+   // .card-product__text
+   &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+   // .card-product__title
+   &__title {
+      font-weight: 700;
+      font-size: rem(24);
+      line-height: math.div(24, 28);
+      color: #070707;
+   }
+   // .card-product__price
+   &__price {
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: math.div(16, 18);
+      text-transform: uppercase;
+      color: #070707;
+   }
+   // .card-product__button
+   &__button {
+   }
+}
+//===============================================================================================================
+.bottom-content {
+   // .bottom-content__full-price
+   &__full-price {
+   }
+   // .bottom-content__text
+   &__text {
+   }
+   // .bottom-content__price-text
+   &__price-text {
+   }
+   // .bottom-content__button
+   &__button {
+   }
+}

@@ -35,9 +35,11 @@
    &__items {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      @media (max-width: $tablet) {
-         grid-template-columns: 1fr;
-         grid-template-rows: repeat(3, 1fr);
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
          gap: rem(20);
       }
    }
@@ -48,46 +50,54 @@
       border: rem(1) solid;
       border-image: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
 
-      &:nth-child(1) {
-         background-image: url(../img/section__games/games-1.jpg);
-         @media screen and (min-device-pixel-ratio: 2),
-            screen and (min-resolution: 192dpi),
-            screen and (min-resolution: 2dppx) {
-            background-image: url("../img/section__games/games-1@2x.jpg");
+      @media (min-width: $pc) {
+         &:nth-child(1) {
+            background-image: url(../img/section__games/games-1.jpg);
+            @media screen and (min-device-pixel-ratio: 2),
+               screen and (min-resolution: 192dpi),
+               screen and (min-resolution: 2dppx) {
+               background-image: url("../img/section__games/games-1@2x.jpg");
+            }
          }
-      }
-      &:nth-child(2) {
-         background-image: url(../img/section__games/games-2.jpg);
-         @media screen and (min-device-pixel-ratio: 2),
-            screen and (min-resolution: 192dpi),
-            screen and (min-resolution: 2dppx) {
-            background-image: url("../img/section__games/games-2@2x.jpg");
+         &:nth-child(2) {
+            background-image: url(../img/section__games/games-2.jpg);
+            @media screen and (min-device-pixel-ratio: 2),
+               screen and (min-resolution: 192dpi),
+               screen and (min-resolution: 2dppx) {
+               background-image: url("../img/section__games/games-2@2x.jpg");
+            }
          }
-      }
-      &:nth-child(3) {
-         background-image: url(../img/section__games/games-3.jpg);
-         @media screen and (min-device-pixel-ratio: 2),
-            screen and (min-resolution: 192dpi),
-            screen and (min-resolution: 2dppx) {
-            background-image: url("../img/section__games/games-3@2x.jpg");
+         &:nth-child(3) {
+            background-image: url(../img/section__games/games-3.jpg);
+            @media screen and (min-device-pixel-ratio: 2),
+               screen and (min-resolution: 192dpi),
+               screen and (min-resolution: 2dppx) {
+               background-image: url("../img/section__games/games-3@2x.jpg");
+            }
          }
-      }
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
 
-      @include adaptiveValue("padding-top", 140, 52);
-      max-width: rem(290);
-      overflow: hidden;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         @include adaptiveValue("padding-top", 140, 52);
+         max-width: rem(290);
+         overflow: hidden;
 
-      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-      &:hover,
-      &:focus {
-         transform: scale(0.97);
+         &:hover,
+         &:focus {
+            transform: scale(0.97);
+         }
+         &:hover .article-games__title::after,
+         &:focus .article-games__title::after {
+            transform: scaleX(1);
+         }
       }
-      &:hover .article-games__title::after,
-      &:focus .article-games__title::after {
-         transform: scaleX(1);
+      @media (max-width: $pc) {
+         padding: rem(20);
+      }
+      @media (max-width: $mobile) {
+         max-width: rem(300);
       }
    }
 }
@@ -179,46 +189,96 @@
    &__content {
       display: flex;
       flex-direction: column;
-      padding: rem(20);
-      height: 100%;
-      flex: 1 1 auto;
-      transform: translateY(65%);
-      background: linear-gradient(hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1));
-      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @media (min-width: $pc) {
+         padding: rem(20);
+         transform: translateY(65%);
+         background: linear-gradient(hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1));
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @media (max-width: $pc) {
+      }
+      @media (max-width: $mobile) {
+         text-align: center;
+      }
+   }
+   // .article-games__picture
+   &__picture {
+      display: none;
+      @media (max-width: $pc) {
+         display: block;
+         &:not(:last-child) {
+            margin-bottom: rem(20);
+         }
+      }
+      @media (max-width: $mobile) {
+         // width: rem(200);
+         // height: rem(220);
+      }
+      img {
+         display: none;
+         @media (max-width: $pc) {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+         }
+      }
+   }
+   // .article-games__link
+   &__link {
+      display: none;
+      @media (max-width: $pc) {
+         display: block;
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 20, 10);
+         }
+      }
    }
    // .article-games__title
    &__title {
       position: relative;
+      @media (min-width: $mobile) {
+         flex-basis: rem(40);
+      }
 
       font-weight: 400;
       font-size: rem(22);
       line-height: math.div(22, 27);
-      color: #fff;
+      color: #070707;
 
-      &:not(:last-child) {
-         margin-bottom: rem(20);
+      @media (min-width: $pc) {
+         &::after {
+            content: "";
+            position: absolute;
+            height: rem(2.5);
+            width: calc(100% + rem(20));
+            left: calc(rem(20) * -2);
+            bottom: rem(-5.5);
+            transform-origin: left;
+            border-radius: rem(5);
+            background-color: #fff;
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         }
       }
-      &::after {
-         content: "";
-         position: absolute;
-         height: rem(2.5);
-         width: calc(100% + rem(20));
-         left: calc(rem(20) * -2);
-         bottom: rem(-5.5);
-         transform-origin: left;
-         border-radius: rem(5);
-         background-color: #fff;
-         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @media (min-width: $pc) {
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 20, 10);
+         }
+         color: #ffffffe6;
       }
    }
    // .article-games__text
    &__text {
       font-weight: 400;
       line-height: math.div(16, 14);
-      flex-basis: rem(80);
-      color: #ffffffe6;
+      @media (min-width: $mobile) {
+         flex-basis: rem(90);
+      }
+      @media (min-width: $pc) {
+         color: #ffffffe6;
+      }
       &:not(:last-child) {
-         margin-bottom: rem(25);
+         @include adaptiveValue("margin-bottom", 25, 15);
       }
    }
    // .article-games__button
@@ -227,7 +287,13 @@
       justify-content: center;
       align-items: center;
 
-      max-width: rem(130);
+      @media (min-width: $pc) {
+         max-width: rem(130);
+      }
+      @media (max-width: $pc) {
+         width: 100%;
+      }
+
       padding: rem(8) rem(20);
       border-radius: rem(5);
       background-color: #fff;
@@ -242,7 +308,8 @@
    }
 }
 //===============================================================================================================
-@media (hover) {
+
+@media (min-width: $pc) and (hover) {
    .article-games__content {
       transform: translateY(70%);
       transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
