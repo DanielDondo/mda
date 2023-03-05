@@ -2868,121 +2868,6 @@ h6 {
   display: none !important;
 }
 
-.header__basket.active:hover {
-  cursor: pointer;
-  color: #bc10d8;
-  z-index: 5;
-}
-
-.basket {
-  position: relative;
-}
-.basket__quantily {
-  position: absolute;
-  width: 0.875rem;
-  height: 0.875rem;
-  font-size: 0.6875rem;
-  border-radius: 50%;
-  line-height: 0;
-  bottom: 0;
-  right: -0.3125rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #000;
-  color: #fff;
-}
-.basket__content {
-  display: none;
-  position: absolute;
-  cursor: default;
-  right: 0;
-  -webkit-transform: translate(0%, 10%);
-          transform: translate(0%, 10%);
-  min-height: 400px;
-  width: 490px;
-  background-color: yellow;
-}
-@media (min-width: 75em) {
-  .basket__content {
-    top: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75em) {
-  @supports (top: clamp( 0.5rem , 0.2272727273rem  +  1.3636363636vw , 1.25rem )) {
-    .basket__content {
-      top: clamp( 0.5rem , 0.2272727273rem  +  1.3636363636vw , 1.25rem );
-    }
-  }
-  @supports not (top: clamp( 0.5rem , 0.2272727273rem  +  1.3636363636vw , 1.25rem )) {
-    .basket__content {
-      top: calc(
-            0.5rem + 0.75 * (100vw - 20rem) / 55
-         );
-    }
-  }
-}
-@media (max-width: 20em) {
-  .basket__content {
-    top: 0.5rem;
-  }
-}
-
-.content-basket__list {
-  max-height: 330px;
-}
-.content-basket__card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 12px 20px;
-  gap: 30px;
-}
-.card-product__picture {
-  width: 100px;
-  height: 100px;
-}
-.card-product__picture img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card-product__text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-}
-.card-product__title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 0.8571428571;
-  color: #070707;
-}
-.card-product__price {
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 0.8888888889;
-  text-transform: uppercase;
-  color: #070707;
-}
 .header {
   background-color: #f6f4f5;
   border-bottom: 0.0625rem solid #cacad6;
@@ -3048,9 +2933,6 @@ h6 {
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
-}
-.header__basket span {
-  display: none;
 }
 
 @media (max-width: 47.99875em) {
